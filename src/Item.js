@@ -9,14 +9,10 @@ class Item extends Component {
     super();
   }
 
-  checkItem(event) {
-    this.props.checkListener(event.target.value)
-  }
-
   render() {
     return(
       div({},
-        input({type:"checkbox", onClick:this.checkItem.bind(this), checked: this.props.item.checked}),
+        input({type:"checkbox", onClick:this.props.checkListener.bind(this), checked: this.props.item.checked}),
         this.props.item.todo
       )
     )

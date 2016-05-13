@@ -30,6 +30,12 @@ class TodoHeader extends Component {
     }
   }
 
+  checkItem(event) {
+    this.setState({
+      items: this.state.items.concat([{todo:this.state.todo, checked:true}])
+    })
+  }
+
   render() {
     return (
       div({},
@@ -39,7 +45,7 @@ class TodoHeader extends Component {
         ),
         div({},
             this.state.items.map(function(item) {
-        			return $(Item({item: item}))
+        			return $(Item({item: item, checkListener: this.checkItem}))
       			})
         )
       )
