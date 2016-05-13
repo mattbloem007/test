@@ -1,0 +1,1 @@
+module.exports = require("npm:node-fetch@1.5.2/index.js");
